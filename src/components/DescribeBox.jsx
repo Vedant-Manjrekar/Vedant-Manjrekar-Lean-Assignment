@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { IoMdAttach } from "react-icons/io";
 import { Context } from "../Context";
 
-function DescribeBox({ text, addAttachment, isMandatory }) {
+function DescribeBox({ addAttachment }) {
   const { setIsEmpty } = useContext(Context);
 
   return (

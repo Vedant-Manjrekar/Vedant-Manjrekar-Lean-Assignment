@@ -7,13 +7,10 @@ import Input from "./Input";
 import EmailForUpdate from "./EmailForUpdate";
 import { Context } from "../Context";
 import Divider from "./Divider";
-
-const elements = [
-  "Interview Questions",
-  "Concept Cards",
-  "Practice Questions",
-  "Quizzes",
-];
+import Report from "./Report";
+import ContactUs from "./ContactUs";
+import Suggestions from "./Suggestions";
+import Feedback from "./Feedback";
 
 const titles = {
   report: "Let us know about the Issue you are facing right now!",
@@ -66,83 +63,19 @@ function DialogueBox({ optionValue, isLoggedIn }) {
       ) : (
         <>
           {optionValue === "report" && (
-            <>
-              <Title title={titles.report} />
-
-              <Divider />
-
-              <Label text={"Choose a section"} />
-              <DropDown elements={elements} />
-
-              <Label text={"Describe the issue in detail"} isMandatory={true} />
-
-              <DescribeBox addAttachment={true} />
-
-              {!isLoggedIn && <EmailForUpdate />}
-            </>
+            <Report title={titles.report} isLoggedIn={isLoggedIn} />
           )}
 
           {optionValue === "contactus" && (
-            <>
-              <Title title={titles.contactus} />
-
-              <Divider />
-
-              <Label text={"Your Name"} isMandatory={!isLoggedIn} />
-              <Input placeholder={"Enter your name"} />
-
-              {!isLoggedIn && (
-                <>
-                  <Label text={"Your Email"} isMandatory={true} />
-                  <Input placeholder={"Enter your Email"} />
-
-                  <Label text={"Your Phone Number"} isMandatory={false} />
-                  <Input placeholder={"Enter your Phone Number"} />
-                </>
-              )}
-
-              <Label text={"What would you like to ask"} isMandatory={true} />
-              <DescribeBox addAttachment={false} />
-            </>
+            <ContactUs title={titles.contactus} isLoggedIn={isLoggedIn} />
           )}
 
           {optionValue === "suggestion" && (
-            <>
-              <Title title={titles.suggestions} />
-
-              <Divider />
-
-              <Label text={"Choose a section"} />
-              <DropDown elements={elements} />
-
-              <Label
-                text={"Describe the suggestion in detail"}
-                isMandatory={true}
-              />
-
-              <DescribeBox addAttachment={true} />
-
-              {!isLoggedIn && <EmailForUpdate />}
-            </>
+            <Suggestions title={titles.suggestions} isLoggedIn={isLoggedIn} />
           )}
 
           {optionValue === "feedback" && (
-            <>
-              <Title title={titles.feedback} />
-
-              <Divider />
-
-              <DescribeBox addAttachment={true} />
-
-              {isLoggedIn ? (
-                <div className='anon'>
-                  <input type='checkbox' />
-                  <span>Send feedback anonymously</span>
-                </div>
-              ) : (
-                <EmailForUpdate />
-              )}
-            </>
+            <Feedback title={titles.feedback} isLoggedIn={isLoggedIn} />
           )}
 
           <div className='submit'>

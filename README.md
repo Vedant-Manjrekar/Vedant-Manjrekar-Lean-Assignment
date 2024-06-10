@@ -1,8 +1,7 @@
-# React + Vite
+# Vedant-Manjrekar-Lean-Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### How to test for LogIn-LogOut
 
-Currently, two official plugins are available:
+- ##### To toggle between when user is loggedIn and when not use the `isLoggedIn` <i>(accepts boolean value)</i> attribute present in the `<DialogueBox />` component
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+SS:
